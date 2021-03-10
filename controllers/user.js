@@ -17,7 +17,7 @@ const loginUser = (req, res) => {
     const user = getSingleUserByEmail(email);
 
     if (user && user.password === password) {
-      res.status(200).json({ status: "success", message: "Login successful." });
+      return res.status(200).json({ status: "success", message: "Login successful." });
     }
     res.status(401).json({ status: "fail", message: "Invalid login details" });
   } catch (error) {

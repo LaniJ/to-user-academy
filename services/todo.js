@@ -1,3 +1,5 @@
+// this is used to import
+// uuid is used to generate random id's
 const { todoArray } = require("../models");
 const { v4: uuidv4 } = require("uuid");
 
