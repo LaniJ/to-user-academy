@@ -48,7 +48,7 @@ const allTodos = (req, res) => {
 
 const deleteSelectedTodo = (req, res) => {
   try {
-      deleteTodo (req.params.todoId);
+      deleteTodo(req.params.todoId);
     res
       .status(200)
       .json({ status: "success", message: "Todo deleted " });
