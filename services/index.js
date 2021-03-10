@@ -4,9 +4,11 @@ const {
   getSingleUserByEmail,
   deleteUser,
   updateUserProfile,
-} = require("./user");
+} = require('./user');
 
-const { addNewTodo, getSingleTodo, updateTodo, deleteTodo, getAllTodos } = require("./todo");
+const {
+  addNewTodo, getSingleTodo, updateTodo, deleteTodo, getAllTodos, getAllTodosForSingleUser,
+} = require('./todo');
 
 module.exports = {
   addNewUser,
@@ -18,5 +20,6 @@ module.exports = {
   getSingleTodo,
   updateTodo,
   deleteTodo,
-  getAllTodos
+  getAllTodos,
+  getAllTodosForSingleUser,
 };
