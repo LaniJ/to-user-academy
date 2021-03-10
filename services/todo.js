@@ -25,9 +25,12 @@ const deleteTodo = (id) => {
   return todoArray.splice(index, 1);
 };
 
+const getAllTodos = () => todoArray;
+
 module.exports = {
   addNewTodo,
   getSingleTodo,
   updateTodo,
   deleteTodo,
+  getAllTodos
 };

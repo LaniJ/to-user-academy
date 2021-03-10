@@ -1,4 +1,4 @@
-const { addNewTodo, updateTodo, getSingleTodo, deleteTodo } = require("../services");
+const { addNewTodo, updateTodo, getSingleTodo, deleteTodo, getAllTodos } = require("../services");
 
 const createTodo = (req, res) => {
   try {
@@ -25,12 +25,25 @@ const modifyTodo = (req, res) => {
 const getTodo = (req, res) => {
     try {
         const currentTodo = getSingleTodo (req.params.todoId);
+        console.log(currentTodo);
       res
         .status(200)
         .json({ status: "success", message: "Todo fetched ", data: currentTodo });
     } catch (error) {
       res.status(500).json({ status: "fail", message: "Something went wrong." });
     }
+};
+
+const allTodos = (req, res) => {
+  try {
+      const todoList = getAllTodos();
+      console.log(todoList);
+    res
+      .status(200)
+      .json({ status: "success", message: "Todo array fetched ", data: todoList });
+  } catch (error) {
+    res.status(500).json({ status: "fail", message: "Something went wrong while fetching todos." });
+  }
 };
 
 const deleteSelectedTodo = (req, res) => {
@@ -48,5 +61,6 @@ module.exports = {
     createTodo,
     modifyTodo,
     getTodo,
-    deleteSelectedTodo
+    deleteSelectedTodo,
+    allTodos
 };
